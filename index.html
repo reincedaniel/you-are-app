@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Você é GAY Sim ou Não</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 2px none gray;
+          /*   display: flex;
+            align-items: center; */
+          /*   justify-content: center; */
+            position: relative;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #sim, #nao {
+            position: relative;
+        }
+        #sim {
+            background-color: green;
+            color: white;
+        }
+        #nao {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é GAY Sim ou Não?</h1>
+    <div class="buttons">
+        <button id="sim" onclick="responderSim()">SIM</button>
+        <button id="nao" onclick="responderNao()" onmouseover="fugir()">NÃO</button>
+    </div>
+
+    <script>
+        function responderSim() {
+            alert("Então Você é GAY ✅🙏🏾!");
+        }
+        function responderNao() {
+            alert("Então Você Não é GAY 😅!");
+        }
+
+        function fugir() {
+            let botaoNao = document.getElementById("nao");
+            let box = document.querySelector(".buttons");
+            let larguraBox = box.clientWidth - botaoNao.offsetWidth;
+            let alturaBox = box.clientHeight - botaoNao.offsetHeight;
+
+            let novaPosX = Math.random() * larguraBox;
+            let novaPosY = Math.random() * alturaBox;
+
+            botaoNao.style.position = "absolute";
+            botaoNao.style.left = `${novaPosX}px`;
+            botaoNao.style.top = `${novaPosY}px`;
+        }
+    </script>
+</body>
+</html>
