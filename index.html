@@ -11,39 +11,83 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            position: relative;
+            background: linear-gradient(135deg, #8EC5FC 0%, #E0C3FC 100%);
+            margin: 0;
+            overflow: hidden;
         }
         .buttons {
             margin-top: 20px;
             position: relative;
-            width: 500px;
-            height: 500px;
-            border: 2px none gray;
-          /*   display: flex;
-            align-items: center; */
-          /*   justify-content: center; */
-            position: relative;
+            width: 600px;
+            height: 350px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         button {
-            font-size: 18px;
-            padding: 10px 20px;
-            margin: 10px;
+            font-size: 24px;
+            padding: 20px 40px;
+            margin: 20px;
             cursor: pointer;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
-        #sim, #nao {
-            position: relative;
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
         #sim {
-            background-color: green;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
             color: white;
         }
         #nao {
-            background-color: red;
+            background: linear-gradient(45deg, #FF416C, #FF4B2B);
             color: white;
         }
+        h1 {
+            font-size: 3em;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 40px;
+            animation: floating 3s ease-in-out infinite;
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.1em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @media (max-width: 768px) {
+            .buttons {
+                width: 90%;
+                height: auto;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 20px;
+                padding: 15px 30px;
+            }
+        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Você é GAY Sim ou Não?</h1>
@@ -52,12 +96,15 @@
         <button id="nao" onclick="responderNao()" onmouseover="fugir()">NÃO</button>
     </div>
 
+    <div class="footer">
+        Desenvolvido por @enzadaz (Lourenço Carlos)
+    </div>
     <script>
         function responderSim() {
-            alert("Então Você é GAY ✅🙏🏾!");
+            alert("Então Você é GAY ✅🌈!");
         }
         function responderNao() {
-            alert("Então Você Não é GAY 😅!");
+            alert("Então Você Não é GAY 😊!");
         }
 
         function fugir() {
@@ -75,4 +122,4 @@
         }
     </script>
 </body>
-</html>
+</html></div>
