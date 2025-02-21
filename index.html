@@ -93,7 +93,7 @@
     <h1>Você é GAY Sim ou Não?</h1>
     <div class="buttons">
         <button id="sim" onclick="responderSim()">SIM</button>
-        <button id="nao" onclick="responderNao()" onmouseover="fugir()">NÃO</button>
+        <button id="nao" onmouseover="fugir()" onclick="responderNao()" >NÃO</button>
     </div>
 
     <div class="footer">
@@ -116,11 +116,17 @@
             let novaPosX = Math.random() * larguraBox;
             let novaPosY = Math.random() * alturaBox;
 
-            botaoNao.style.transition = "all 0.05s"; // Made transition faster (50ms)
+            botaoNao.style.transition = "all 0.05s";
             botaoNao.style.position = "absolute";
             botaoNao.style.left = `${novaPosX}px`;
             botaoNao.style.top = `${novaPosY}px`;
         }
+
+        // Add touch event for mobile devices
+        document.getElementById("nao").addEventListener("touchstart", function(e) {
+            e.preventDefault(); // Prevent default touch behavior
+            fugir();
+        });
     </script>
 </body>
 </html></div>
